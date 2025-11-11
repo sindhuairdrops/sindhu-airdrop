@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sindhu Airdrop</title>
+  <style>
+    body {
+      text-align: center;
+      background: #0b132b;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    h1 { margin-top: 40px; }
+    button {
+      background: #00aaff;
+      border: none;
+      color: white;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔥 Sindhu Airdrop</h1>
+  <p>Tap below to earn tokens!</p>
+  <button onclick="earnTokens()">🪙 Earn 10 Tokens</button>
+
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <script>
+    const tg = window.Telegram.WebApp;
+    tg.expand();
+
+    function earnTokens() {
+      const data = { taps: 10 }; // coins earned
+      tg.sendData(JSON.stringify(data)); // send to bot
+      alert("✅ You earned 10 coins!");
+    }
+  </script>
+</body>
+</html>
